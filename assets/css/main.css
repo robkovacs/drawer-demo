@@ -112,13 +112,12 @@ p:last-child {
 }
 
 .drawer--lg[open] {
-  animation-duration: 400ms;
+  animation-duration: 0ms;
 }
 
 .drawer--xl[open] {
   animation-duration: 500ms;
 }
-
 
 @keyframes slide-in {
   0% {
