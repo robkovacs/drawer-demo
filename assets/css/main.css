@@ -26,11 +26,8 @@ body {
   max-width: 100vw;
 }
 
-.has-open-drawer,
-.has-open-drawer > body {
-  overflow-y: hidden;
-  position: fixed;
-  max-height: 100vh;
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 p {
@@ -50,22 +47,6 @@ p:last-child {
   margin-bottom: 1.5rem;
 }
 
-.backdrop {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #000;
-  opacity: 0;
-  transition: opacity 250ms ease-in-out;
-}
-
-.backdrop.showing {
-  opacity: 0.2;
-}
-
 :root {
   --drawer-width-sm: clamp(25%, 22.5rem, calc(100% - 3rem));
   --drawer-width-md: clamp(40%, 45rem, calc(100% - 3rem));
@@ -74,46 +55,66 @@ p:last-child {
 }
 
 .drawer {
-  position: fixed;
-  z-index: 2;
   background-color: #ffffff;
-  top: 0;
-  bottom: 0;
-  right: calc(-1 * var(--drawer-width-sm));
-  display: flex;
-  flex-direction: column;
+  border: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  max-height: 100vh;
   width: var(--drawer-width-sm);
   /*   filter: drop-shadow(-8px -8px 16px rgba(63, 65, 71, 0.05)), drop-shadow(8px 8px 16px rgba(63, 65, 71, 0.20)); */
   transition: right 250ms ease-out;
 }
 
+.drawer::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 200ms ease-in;
+}
+
+.drawer[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .drawer--sm {
-  right: calc(-1 * var(--drawer-width-sm));
   width: var(--drawer-width-sm);
 }
 
 .drawer--md {
-  right: calc(-1 * var(--drawer-width-md));
   width: var(--drawer-width-md);
 }
 
 .drawer--lg {
-  right: calc(-1 * var(--drawer-width-lg));
   width: var(--drawer-width-lg);
 }
 
 .drawer--xl {
-  right: calc(-1 * var(--drawer-width-xl));
   width: var(--drawer-width-xl);
 }
 
-.drawer.open {
-  right: 0;
+.drawer__contents {
+  position: relative;
+}
+
+.drawer[open] {
   box-shadow: -8px -8px 16px 0px rgba(63, 65, 71, 0.05),
     8px 8px 16px 0px rgba(63, 65, 71, 0.2);
+  animation-name: slide-in;
+  animation-duration: .5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+}
+@keyframes slide-in {
+  0%{
+      transform: translateX(100%)
+  }
 }
 
 .drawer__header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  background-color: #ffffff;
   padding: 0.75rem;
   padding-left: 1.5rem;
   border-bottom: 1px solid #dcd9e1;
@@ -128,11 +129,13 @@ p:last-child {
 
 .drawer__body {
   padding: 1.5rem;
-  flex: 0 1 100%;
-  overflow-y: scroll;
 }
 
 .drawer__footer {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   gap: 1rem;
