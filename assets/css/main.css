@@ -48,10 +48,10 @@ p:last-child {
 }
 
 :root {
-  --drawer-width-sm: clamp(25%, 22.5rem, calc(100% - 3rem));
-  --drawer-width-md: clamp(40%, 45rem, calc(100% - 3rem));
-  --drawer-width-lg: clamp(60%, 67.5rem, calc(100% - 3rem));
-  --drawer-width-xl: clamp(80%, 90rem, calc(100% - 3rem));
+  --drawer-width-sm: min(22.5rem, calc(100% - 3rem));
+  --drawer-width-md: min(45rem, calc(100% - 3rem));
+  --drawer-width-lg: min(67.5rem, calc(100% - 3rem));
+  --drawer-width-xl: min(90rem, calc(100% - 3rem));
 }
 
 .drawer {
@@ -112,7 +112,7 @@ p:last-child {
 }
 
 .drawer--lg[open] {
-  animation-duration: 0ms;
+  animation-duration: 400ms;
 }
 
 .drawer--xl[open] {
