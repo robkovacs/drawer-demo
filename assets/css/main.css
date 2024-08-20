@@ -162,6 +162,24 @@ p:last-child {
   box-shadow: none;
 }
 
+.drawer__footer.empty {
+  height: 1rem;
+  padding: 0;
+  overflow: hidden;
+  bottom: -1rem;
+}
+
+.drawer__footer.empty > button {
+  display: none;
+}
+
+.drawer.at-bottom .drawer__footer.empty {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .milo-button {
   font-family: inherit;
   font-size: 1rem;

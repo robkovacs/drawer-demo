@@ -21,7 +21,7 @@
 
         closeButton.style.display = "";
         secondaryButton.style.display = "";
-        drawerFooter.style.display = "";
+        drawerFooter.classList.remove("empty");
 
         if (!showClose) {
             closeButton.style.display = "none";
@@ -30,7 +30,7 @@
         if (actions == 1) {
             secondaryButton.style.display = "none";
         } else if (actions == 0) {
-            drawerFooter.style.display = "none";
+            drawerFooter.classList.add("empty");
         }
 
         drawer.showModal();
