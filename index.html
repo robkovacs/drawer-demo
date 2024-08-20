@@ -12,11 +12,33 @@
     </head>
 
     <body>
-        <div class="button-list">
-            <button class="button button--open-sm">open sm drawer</button>
-            <button class="button button--open-md">open md drawer</button>
-            <button class="button button--open-lg">open lg drawer</button>
-            <button class="button button--open-xl">open xl drawer</button>
+        <div class="drawer-config">
+            <p>
+                <label for="drawer-config--size">Size</label>
+                <select id="drawer-config--size">
+                    <option selected>sm</option>
+                    <option>md</option>
+                    <option>lg</option>
+                    <option>xl</option>
+                </select>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" id="drawer-config--showClose" checked>
+                    Show close button?
+                </label>
+            </p>
+            <p>
+                <label for="drawer-config--actions">Actions</label>
+                <select id="drawer-config--actions">
+                    <option value="2" selected>both</option>
+                    <option value="1">primary only</option>
+                    <option value="0">none</option>
+                </select>
+            </p>
+            <p>
+                <button class="button--drawer-config">Open drawer</button>
+            </p>
         </div>
 
         <p>
@@ -233,11 +255,11 @@
                     </p>
                 </div>
                 <div class="drawer__footer">
-                    <button class="milo-button milo-button--ghost cancel-button">
+                    <button class="milo-button milo-button--ghost button--secondary">
                         Cancel
                     </button>
                     <button class="milo-button milo-button--filled">
-                        This doesn't work
+                        This does nothing
                     </button>
                 </div>
             </div>

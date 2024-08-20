@@ -24,7 +24,7 @@ body {
   margin: 2rem;
 }
 
-body:has(dialog[open]) {
+html:has(dialog[open]), body:has(dialog[open]) {
   overflow: hidden;
 }
 
@@ -37,11 +37,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-.button-list {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  flex-wrap: wrap;
+.drawer-config {
   margin-bottom: 1.5rem;
 }
 
@@ -132,6 +128,12 @@ p:last-child {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  min-height: calc(4.5rem + 1px);
+}
+
+.drawer.past-top .drawer__header {
+  box-shadow: -8px -8px 16px 0px rgba(63, 65, 71, 0.05),
+  8px 8px 16px 0px rgba(63, 65, 71, 0.2);
 }
 
 .drawer__body {
@@ -149,6 +151,12 @@ p:last-child {
   justify-content: flex-end;
   padding: 1.5rem;
   border-top: 1px solid #dcd9e1;
+  box-shadow: 8px 8px 16px 0px rgba(63, 65, 71, 0.05),
+  -8px -8px 16px 0px rgba(63, 65, 71, 0.2);
+}
+
+.drawer.at-bottom .drawer__footer {
+  box-shadow: none;
 }
 
 .milo-button {
