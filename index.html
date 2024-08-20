@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Drawer Demo</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="assets/css/oately.css" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <script>
-            let shutUpFF = true;
-        </script>
-    </head>
 
-    <body>
+<head>
+    <title>Drawer Demo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/oately.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script>
+        let shutUpFF = true;
+    </script>
+</head>
+
+<body>
+    <div id="app">
         <div class="drawer-config">
             <p>
                 <label for="drawer-config--size">Size</label>
@@ -138,18 +140,10 @@
                 <div class="drawer__header">
                     Header
                     <button class="milo-icon-button close-button">
-                        <svg
-                            aria-label="Close this drawer"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                fill="currentColor"
-                                d="M19.53 18.22a.75.75 0 1 1-1.06 1.06l-6.22-6.22-6.22 6.22a.75.75 0 0 1-1.06-1.06L11.19 12 4.97 5.78a.75.75 0 0 1 1.06-1.06l6.22 6.22 6.22-6.22a.75.75 0 1 1 1.06 1.06L13.31 12l6.22 6.22Z"
-                            />
+                        <svg aria-label="Close this drawer" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M19.53 18.22a.75.75 0 1 1-1.06 1.06l-6.22-6.22-6.22 6.22a.75.75 0 0 1-1.06-1.06L11.19 12 4.97 5.78a.75.75 0 0 1 1.06-1.06l6.22 6.22 6.22-6.22a.75.75 0 1 1 1.06 1.06L13.31 12l6.22 6.22Z" />
                         </svg>
                     </button>
                 </div>
@@ -264,6 +258,8 @@
                 </div>
             </div>
         </dialog>
-        <script src="assets/js/index.mjs" type="module"></script>
-    </body>
+    </div>
+    <script src="assets/js/index.mjs" type="module"></script>
+</body>
+
 </html>
