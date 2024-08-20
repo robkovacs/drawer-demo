@@ -1,6 +1,3 @@
-import "./oately.css";
-import "./styles.css";
-
 (() => {
   let smDrawerButton = document.querySelector(".button--open-sm");
   let mdDrawerButton = document.querySelector(".button--open-md");
