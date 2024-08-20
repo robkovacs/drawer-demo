@@ -25,6 +25,9 @@ body {
 }
 
 html:has(dialog[open]), body:has(dialog[open]) {
+  height: 100%;
+  width: 100%;
+  position: relative;
   overflow: hidden;
 }
 
