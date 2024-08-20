@@ -50,12 +50,12 @@
         closeDrawer();
     });
 
-    document.querySelector("dialog").addEventListener("mousedown", (event) => {
-        if (event.target === event.currentTarget) {
-            event.currentTarget.scrollTop = 0;
-            event.currentTarget.close();
-        }
-    });
+    // document.querySelector("dialog").addEventListener("mousedown", (event) => {
+    //     if (event.target === event.currentTarget) {
+    //         event.currentTarget.scrollTop = 0;
+    //         event.currentTarget.close();
+    //     }
+    // });
 
     function closeDrawer() {
         let drawer = document.querySelector("dialog");
