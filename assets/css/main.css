@@ -24,7 +24,7 @@ body {
   margin: 2rem;
 }
 
-#app:has(dialog[open]) {
+html:has(dialog[open]), body:has(dialog[open]) {
   overflow: hidden;
 }
 
