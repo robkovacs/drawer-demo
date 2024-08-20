@@ -17,7 +17,6 @@
             "drawer--xl"
         );
         drawer.classList.add("drawer--" + size);
-        drawer.style.transitionDuration = drawer.offsetWidth / 2.5 + "ms";
         drawer.showModal();
     }
 

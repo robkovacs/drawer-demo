@@ -100,13 +100,29 @@ p:last-child {
   box-shadow: -8px -8px 16px 0px rgba(63, 65, 71, 0.05),
     8px 8px 16px 0px rgba(63, 65, 71, 0.2);
   animation-name: slide-in;
-  animation-duration: .5s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
 }
+
+.drawer--sm[open] {
+  animation-duration: 200ms;
+}
+
+.drawer--md[open] {
+  animation-duration: 300ms;
+}
+
+.drawer--lg[open] {
+  animation-duration: 400ms;
+}
+
+.drawer--xl[open] {
+  animation-duration: 500ms;
+}
+
+
 @keyframes slide-in {
-  0%{
-      transform: translateX(100%)
+  0% {
+      transform: translateX(100%);
   }
 }
 
