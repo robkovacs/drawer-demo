@@ -21,7 +21,8 @@
 
         closeButton.style.display = "";
         secondaryButton.style.display = "";
-        drawerFooter.classList.remove("empty");
+        secondaryButton.style.display = "";
+        drawerFooter.style.display = "";
 
         if (!showClose) {
             closeButton.style.display = "none";
@@ -30,7 +31,7 @@
         if (actions == 1) {
             secondaryButton.style.display = "none";
         } else if (actions == 0) {
-            drawerFooter.classList.add("empty");
+            drawerFooter.style.display = "none";
         }
 
         drawer.showModal();
@@ -76,9 +77,7 @@
     let scrollEvent;
     let drawer = document.querySelector(".drawer");
     let drawerContents = document.querySelector(".drawer__contents");
-    drawer.addEventListener("scroll", (e) => {
-        console.log('scrolling');
-           
+    drawer.addEventListener("scroll", (e) => {   
         if (scrollEvent) {
             window.cancelAnimationFrame(scrollEvent);
             e.target.classList.remove("past-top", "at-bottom");
@@ -89,7 +88,6 @@
             let scrollPosition = e.target.scrollTop,
                 containerHeight = e.target.offsetHeight,
                 contentsHeight = drawerContents.offsetHeight;
-            console.log(scrollPosition, containerHeight);
             
             if (scrollPosition > 0) {
                 e.target.classList.add("past-top");
