@@ -92,6 +92,7 @@ p:last-child {
     8px 8px 16px 0px rgba(63, 65, 71, 0.2);
   animation-name: slide-in;
   animation-timing-function: ease-out;
+  overscroll-behavior: contain;
 }
 
 .drawer--sm[open] {
@@ -162,10 +163,14 @@ p:last-child {
   box-shadow: none;
 }
 
-.drawer__footer.empty {
+.drawer:not(:has(.drawer__footer.empty)):after {
+  position: fixed;
+  content: '';
+  box-shadow: 4px 4px 8px 0px rgba(63, 65, 71, 0.06),
+  -4px -4px 8px 0px rgba(63, 65, 71, 0.24);
   height: 1rem;
-  padding: 0;
-  overflow: hidden;
+  left: 0;
+  right: 0;
   bottom: -1rem;
 }
 
